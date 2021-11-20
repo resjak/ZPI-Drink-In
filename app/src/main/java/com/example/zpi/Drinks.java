@@ -233,14 +233,14 @@ public class Drinks extends AppCompatActivity {
                 "'50 ml wódki\n" +
                 "15 ml rumu\n" +
                 "30 ml ajerkoniaku \n" +
-                "Sok pomarańczowy')");
+                "Sok pomarańczowy')"); //działa
 
 
         database.execSQL("INSERT INTO Drinks VALUES('Malibu Sunrise','Prosty i szybki drink, idealny na imprezę '," +
                 "'40 ml wódki\n" +
                 "30 ml Malibu\n" +
                 "ok. 15 ml grenadiny \n" +
-                "Kilka kostek lodu.')");
+                "Kilka kostek lodu.')"); //działa
 
 
 
@@ -249,7 +249,7 @@ public class Drinks extends AppCompatActivity {
                 "'40 ml likieru bananowego\n" +
                 "30 ml wódka\n" +
                 "80 ml soku pomarańczowego \n" +
-                "Kilka kostek lodu.')");
+                "Kilka kostek lodu.')"); //działa
 
 
 
@@ -258,7 +258,7 @@ public class Drinks extends AppCompatActivity {
                 "'50 ml wódki\n" +
                 "15 ml likieru Maraschino\n" +
                 "5 ml grenadiny \n" +
-                "75 ml soku ananasowego')");
+                "75 ml soku ananasowego')"); //działa
 
 
 
@@ -268,7 +268,7 @@ public class Drinks extends AppCompatActivity {
                 "30 ml soku z limonki\n" +
                 "15 ml syropu z agawy\n" +
                 "10 ml Ancho Reyes Verde" +
-                "100-120 ml piwa imbirowego')");
+                "100-120 ml piwa imbirowego')"); //działa
 
 
         database.execSQL("INSERT INTO Drinks VALUES('Cerveza preparada',' Cerveza preparada to meksykański napój piwny o pikantnym smaku'," +
@@ -276,14 +276,14 @@ public class Drinks extends AppCompatActivity {
                 "50 ml soku pomidorowego\n" +
                 "10 ml soku z limonki\n" +
                 "15 ml soku z cytryny\n" +
-                "kropla ostrego sosu (najlepiej salsa)')");
+                "kropla ostrego sosu (najlepiej salsa)')"); //działa
 
 
 
 
         database.execSQL("INSERT INTO Drinks VALUES('Russ Grejpfrutowy','Doskonały drink na gorące dni'," +
                 "'250 ml soku grejpfutowego\n" +
-                "250 ml piwa')");
+                "250 ml piwa')"); //działa
 
 
         database.execSQL("INSERT INTO Drinks VALUES('Piwo z sokiem z czarnej porzeczki','Drink idealny dla osób, które lubią smak czarnej porzeczki'," +
@@ -291,14 +291,14 @@ public class Drinks extends AppCompatActivity {
                 "Pół szklanki soku porzeczkowego\n" +
                 "Odrobina likieru porzeczkowego\n" +
                 "15 ml soku z cytryny\n" +
-                "Kilka kostek lodu')");
+                "Kilka kostek lodu')"); //działa
 
 
         database.execSQL("INSERT INTO Drinks VALUES('Cherry Kiss','Bardzo słodki, orzeźwijący drink z wódką wisniową czyli wiśniówką. Ja do swojego przepisu użyłem Soplicy Wiśniowej. Ideapny, prosty drink imprezowy z dodatkiem cytryny i coli. Jeżeli lubicie słodkie drinki to tego nie możecie pominąć.  '," +
                 "'Cola lub Pepsi 100.00 ml \n"+
                 "Sok z cytryny 10.00 ml \n"+
                 "Wódka wiśniowa 40.00 ml \n"+
-                "Kostki lodu')");
+                "Kostki lodu')"); //działa
 
         database.execSQL("INSERT INTO Drinks VALUES('Sapodill Fizz','bardzo brzoskwniowy drink. '," +
                 "'1½ Porcje Absolut Apeach \n"+

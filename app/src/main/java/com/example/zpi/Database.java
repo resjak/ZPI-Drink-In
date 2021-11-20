@@ -13,7 +13,7 @@ public class Database {
 
     public static  void createTablesAndAddValues(SQLiteDatabase database) //Tworzenie tabel do bazy i wpisywanie wartości
             //pierwsze uruchomienie apki
-    {//
+    {
 
         database.execSQL("CREATE TABLE IF NOT EXISTS Drinks(drink_name VARCHAR, recipe VARCHAR,ingredients VARCHAR);");
 

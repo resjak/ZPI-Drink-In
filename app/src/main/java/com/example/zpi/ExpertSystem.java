@@ -1359,7 +1359,7 @@ public void hideButtons()
         }
 
 
-        else if(A==1 && B==2 && zCzym==1 && Smak==1 && SmakAdd==3 && Inne==1 && Pestkowe==1)
+        else if(A==1 && B==2 && zCzym==1 && Smak==1 && SmakAdd==3 && Inne==1 && Pestkowe==2)
         {
             //Cherry Kiss
             hideButtons();
@@ -1367,7 +1367,7 @@ public void hideButtons()
         }
 
 
-        else if(A==1 && B==2 && zCzym==1 && Smak==1 && SmakAdd==3 && Inne==1 && Pestkowe==1)
+        else if(A==1 && B==2 && zCzym==1 && Smak==1 && SmakAdd==3 && Inne==1 && Pestkowe==3)
         {
             //Sapodill Fizz
             hideButtons();
@@ -1523,15 +1523,9 @@ public void hideButtons()
         {
             //Cerveza Preparada
             hideButtons();
-            txQuestion.setText(Database.show(database,"'Cerveza Preparada'"));
+            txQuestion.setText(Database.show(database,"'Cerveza preparada'"));
         }
 
-        else if(A==1 && B==2 && zCzym==8 && AS==1 && GCP==1)
-        {
-            //Cerveza Preparada
-            hideButtons();
-            txQuestion.setText(Database.show(database,"'Cerveza Preparada'"));
-        }
 
         else if(A==1 && B==2 && zCzym==8 && AS==1 && GCP==2)
         {
