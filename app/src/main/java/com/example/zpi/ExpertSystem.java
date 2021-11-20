@@ -244,7 +244,7 @@ public void buttonsCheck() //ustawianie zmiennych kontrolnych adekwatnie do wci�
         drinkSelection();
     }
 
-    if(question=="Który owoc ziarenkowy wolisz?" && b1Clicked==true)
+    if(question=="ziarno?" && b1Clicked==true)
     {
         //pigwa
         Ziarenkowe=1;
@@ -253,7 +253,7 @@ public void buttonsCheck() //ustawianie zmiennych kontrolnych adekwatnie do wci�
         drinkSelection();
     }
 
-    if(question=="Który owoc ziarenkowy wolisz?" && b2Clicked==true)
+    if(question=="ziarno?" && b2Clicked==true)
     {
         //jabłko
         Ziarenkowe=2;
@@ -263,7 +263,7 @@ public void buttonsCheck() //ustawianie zmiennych kontrolnych adekwatnie do wci�
     }
 
 
-    if(question=="Który owoc ziarenkowy wolisz?" && b3Clicked==true)
+    if(question=="ziarno?" && b3Clicked==true)
     {
         //gruszka
         Ziarenkowe=3;
@@ -629,14 +629,15 @@ public void buttonsCheck() //ustawianie zmiennych kontrolnych adekwatnie do wci�
         drinkSelection();
     }
 
-    if(question=="Jakie owoce lubisz?" && b1Clicked==true)
-    {
-        Inne=1;//pestkowe
-        b1Clicked=false;
-        showQuestions();
-        drinkSelection();
+
+    if (question == "Jakie owoce lubisz?" && b1Clicked == true) {
+            Inne = 1;//pestkowe
+            b1Clicked = false;
+            showQuestions();
+            drinkSelection();
 
     }
+
 
     if(question=="Jakie owoce lubisz?" && b2Clicked==true)
     {
@@ -655,6 +656,7 @@ public void buttonsCheck() //ustawianie zmiennych kontrolnych adekwatnie do wci�
         drinkSelection();
 
     }
+
 
 
     if(question=="Który owoc Ci odpowiada?" && b1Clicked==true)
@@ -1082,7 +1084,7 @@ public void hideButtons()
         {
             //Absolute Spiced Apple Sour
             hideButtons();
-            txQuestion.setText(Database.show(database,"'Absolute Spiced Apple Sour'"));
+            txQuestion.setText(Database.show(database,"'Absolut Spiced Apple sour'"));
         }
 
 
@@ -1092,7 +1094,8 @@ public void hideButtons()
         {
             //Absolute pears
             hideButtons();
-            txQuestion.setText(Database.show(database,"'Absolute pears'"));
+            txQuestion.setText(Database.show(database,"'Absolut pears'"));
+
         }
 
         else  if (A==1 && B==2 && zCzym==1 && Smak==2 && KSW==3 && Ozdoba==1)
@@ -1279,7 +1282,7 @@ public void hideButtons()
         {
             //Poncz listopadowy
             hideButtons();
-            txQuestion.setText(Database.show(database,"'Poncz listopadowy'"));
+            txQuestion.setText(Database.show(database,"'Poncz Listopadowy'"));
 
         }
 
@@ -1378,7 +1381,7 @@ public void hideButtons()
         {
             //Busines Time
             hideButtons();
-            txQuestion.setText(Database.show(database,"'Business Time'"));
+            txQuestion.setText(Database.show(database,"'Buisness Time'"));
         }
 
         else if(A==1 && B==2 && zCzym==1 && Smak==2 && KSW==1 && Skladnik==2)
@@ -1416,7 +1419,7 @@ public void hideButtons()
         {
             //Finlandia cranberry brisk
             hideButtons();
-            txQuestion.setText(Database.show(database,"'Finlandia cranberry brisk'"));
+            txQuestion.setText(Database.show(database,"'Finlandia Cranberry Brisk'"));
         }
 
 
@@ -1432,7 +1435,7 @@ public void hideButtons()
         {
             //Sok z gumijagód
             hideButtons();
-            txQuestion.setText(Database.show(database,"'Sok z gumijagód'"));
+            txQuestion.setText(Database.show(database,"'Sok z Gumijagód'"));
         }
 
         else if(A==2 && B==4 && C==12)
@@ -1755,25 +1758,26 @@ public void hideButtons()
 
         }
 
-        if(A==1 && B==2 && zCzym==1 && Smak==1 && SmakAdd==3 && Inne==3)
-        {
-            question="Który owoc ziarenkowy wolisz?";
-            txQuestion.setText("Który owoc ziarenkowy wolisz?");
+
+            if (A==1 && B==2 && zCzym==1 && Smak==1 && SmakAdd==3 && Inne==3) {
+                question = "ziarno?";
+                txQuestion.setText("ziarno?");
 
 
-            btnAnsw1.setVisibility(View.VISIBLE);
-            btnAnsw2.setVisibility(View.VISIBLE);
-            btnAnsw3.setVisibility(View.VISIBLE);
-            btnAnsw4.setVisibility(View.INVISIBLE);
-            btnAnsw5.setVisibility(View.INVISIBLE);
-            btnAnsw6.setVisibility(View.INVISIBLE);
-            btnAnsw7.setVisibility(View.INVISIBLE);
-            btnAnsw8.setVisibility(View.INVISIBLE);
+                btnAnsw1.setVisibility(View.VISIBLE);
+                btnAnsw2.setVisibility(View.VISIBLE);
+                btnAnsw3.setVisibility(View.VISIBLE);
+                btnAnsw4.setVisibility(View.INVISIBLE);
+                btnAnsw5.setVisibility(View.INVISIBLE);
+                btnAnsw6.setVisibility(View.INVISIBLE);
+                btnAnsw7.setVisibility(View.INVISIBLE);
+                btnAnsw8.setVisibility(View.INVISIBLE);
 
-            btnAnsw1.setText("Pigwa");
-            btnAnsw2.setText("Jabłko");
-            btnAnsw3.setText("Gruszka");
-        }
+                btnAnsw1.setText("Pigwa");
+                btnAnsw2.setText("Jabłko");
+                btnAnsw3.setText("Gruszka");
+            }
+
 
         if(A==1 && B==2 && zCzym==1 && Smak==2 && KSW==3)
         {
@@ -2082,7 +2086,8 @@ public void hideButtons()
         if(A==1 && B==2 && zCzym==1 && Smak==1 && SmakAdd==3)
         {
             question="Jakie owoce lubisz?";
-            txQuestion.setText("Jakie owoce lubisz?");
+            //txQuestion.setText("Jakie owoce lubisz?");
+            txQuestion.setText(A+ " "+B+" "+zCzym+" "+Smak+" "+SmakAdd+" "+Inne);
 
 
             btnAnsw1.setVisibility(View.VISIBLE);
@@ -2099,7 +2104,7 @@ public void hideButtons()
             btnAnsw3.setText("Ziarenkowe");
         }
 
-        if(A==1 && B==2 && Smak==1 && SmakAdd==3 && Inne==1)
+        if(A==1 && B==2 && zCzym==1 && Smak==1 && SmakAdd==3 && Inne==1)
         {
             question="Który owoc Ci odpowiada?";
             txQuestion.setText("Który owoc Ci odpowiada?");
@@ -2119,7 +2124,7 @@ public void hideButtons()
             btnAnsw3.setText("Brzoskwinia");
         }
 
-        if(A==1 && B==2 && Smak==1 && SmakAdd==3 && Inne==2)
+        if(A==1 && B==2 && zCzym==1 && Smak==1 && SmakAdd==3 && Inne==2)
         {
             question = "Który z owoców wolisz?";
             txQuestion.setText("Który z owoców wolisz?");

@@ -308,9 +308,9 @@ public class Drinks extends AppCompatActivity {
                 "Woda Gazowana \n"+
                 "opcjonalnie 15 ml soku z cytryny \n"+
                 "Gruszka \n"+
-                "Kostki lodu')");
+                "Kostki lodu')"); //działa
 
-        database.execSQL("INSERT INTO Drinks VALUES('Finlandia Cranberry Brisk','bardzo brzoskwniowy drink. '," +
+        database.execSQL("INSERT INTO Drinks VALUES('Finlandia Cranberry Brisk','bardzo gruszkowy drink. '," +
                 "'1½ Porcje Absolut Apeach \n"+
                 "⅓ Porcja Sok Z cytryny \n"+
                 "1 Porcja Puree Z gruszek \n"+
@@ -318,40 +318,27 @@ public class Drinks extends AppCompatActivity {
                 "Woda Gazowana \n"+
                 "opcjonalnie 15 ml soku z cytryny \n"+
                 "Gruszka \n"+
-                "Kostki lodu')");
+                "Kostki lodu')"); //działa
 
         database.execSQL("INSERT INTO Drinks VALUES('Malinowa Rozkosz','Malinowa Rozkosz to prosty drink z wódką malinową, sokiem z cytryny i spritem. Idealny drink na imprezę, który przygotujecie bez problemu w 2 minuty. '," +
                 "'100.00 ml Sprite \n"+
                 "20.00 ml Sok z cytryny \n"+
                 "40.00 ml Wódka malinowa  \n"+
-                "Kostki lodu')");
+                "Kostki lodu')"); //działa
 
         database.execSQL("INSERT INTO Drinks VALUES('Blackcurrant Sea Breeze','Blackcurrant Sea Breeze to wariacja na klasycznym drinku Sea Breeze (sprawdź przepis). Bardzo orzeźwiajacy, idealny na lato drink z wódką pożeczkową, sokiem żurawinowym o specyficznym smaku i dodatkiem soku z grejpfruta. '," +
                 "'60.00 ml Sok grejpfrutowy \n"+
                 "60.00 ml Sok żurawinowy \n"+
                 "40.00 ml Wódka porzeczkowa  \n"+
-                "Kostki lodu')");
+                "Kostki lodu')"); //działa
 
         database.execSQL("INSERT INTO Drinks VALUES('Sok z Gumijagód',' Sok z Gumijagód  to shot podawany w jednej krakowskiej knajpce. Składa się on z dwóch składników: wódka pigwowa z sokiem porzeczkowym. '," +
                 "'0,5 l wódki \n"+
                 "1 litr soku porzeczkowego \n"+
                 "świeżo wyciśnięty sok z cytryny  \n"+
-                "Kostki lodu')");
+                "Kostki lodu')"); //działa
 
-        database.execSQL("INSERT INTO Drinks VALUES('Absolut Spiced Apple sour',' Bardzo JABŁKOWYM '," +
-                "'1,2 Porcje Absolut Äpple \n"+
-                "3/4 Porcja Sok Jabłkowy \n"+
-                "3/4 Porcja Sok Z cytryny  \n"+
-                "3/4 Porcja Syrop Cukrowy  \n"+
-                "3/4 Porcja Białko Jajka  \n"+
-                "Kostki lodu')");
 
-        database.execSQL("INSERT INTO Drinks VALUES('Absolut Spiced Apple sour',' Bardzo ananasowy '," +
-                "'1,5 Parts Absolut Vodka \n"+
-                "1,5 Parts Pineapple Juice \n"+
-                "Soda Water  \n"+
-                "1 Sprig Mint Leaf  \n"+
-                "Kostki lodu')");
 
 
        database.execSQL("INSERT INTO Drinks VALUES('Grzaniec','Grzane wino – rozgrzewający napój alkoholowy, rodzaj grzańca (grzanki), " +
@@ -363,7 +350,7 @@ public class Drinks extends AppCompatActivity {
                "      \"4 łyżki stołowe miodu lub cukru (najlepszy będzie brązowy)\\n\"+\n" +
                "      \"1 laska cynamonu\\n\"+\n" +
                "      \"3-4 cm kawałek imbiru\\n\"+\n" +
-               "      \"50 g rodzynek\"')");
+               "      \"50 g rodzynek\"')"); //działa
 
         database.execSQL("INSERT INTO Drinks VALUES('Buisness Time','Napełnić shaker koktajlowy kostkami lodu. Dodaj melasę, likier bananowy, bitters kardamonowy," +
                 " Absolut Vodka i sok z limonki. Wstrząsnąć i przecedzić do wysokiej szklanki wypełnionej kostkami lodu. " +
@@ -374,7 +361,7 @@ public class Drinks extends AppCompatActivity {
                 "”1½ Pts Absolut Vodka\\n”+\n" +
                 "”¾ szklanki soku z limonki\\n”+\n" +
                 "”Woda tonizująca\\n”+\n" +
-                "”1 skórka cytryny')");
+                "”1 skórka cytryny')"); //działa
 
 
         database.execSQL("INSERT INTO Drinks VALUES('Hot Toddy','Hot toddy lub hot to trot totty, hot tottie jak również hot whiskey. " +
@@ -383,7 +370,7 @@ public class Drinks extends AppCompatActivity {
                 "      ”miód (1-2 łyżeczki)\\n”+\n" +
                 "      ”herbata (1 torebka)\\n”+\n" +
                 "      ”cytryna (1 plaster)\\n”+\n" +
-                "      ”woda (3/4 kubka')");
+                "      ”woda (3/4 kubka')"); //działa
 
 
         database.execSQL("INSERT INTO Drinks VALUES('Poncz Listopadowy','Smaki mieszają się tak dobrze, że z początku trudno rozpoznać, co właściwie w sobie zawiera ten napój. " +
@@ -391,7 +378,23 @@ public class Drinks extends AppCompatActivity {
                 "'”sok z połówki pomarańczy\\n”+\n" +
                 "      ”3 łyżeczki czarnej liściastej herbaty\\n”+\n" +
                 "      ”3 łyżeczki cukru\\n”+\n" +
-                "      ”2 kieliszki (czyli ok. 50 ml) wiśniówki”')");
+                "      ”2 kieliszki (czyli ok. 50 ml) wiśniówki”')"); //działa
+
+
+        database.execSQL("INSERT INTO Drinks VALUES('Absolut Spiced Apple sour',' Bardzo jabłkowy '," +
+                "'1,2 Porcje Absolut Äpple \n"+
+                "3/4 Porcja Sok Jabłkowy \n"+
+                "3/4 Porcja Sok Z cytryny  \n"+
+                "3/4 Porcja Syrop Cukrowy  \n"+
+                "3/4 Porcja Białko Jajka  \n"+
+                "Kostki lodu')");
+
+        database.execSQL("INSERT INTO Drinks VALUES('Absolut pears',' Bardzo ananasowy '," +
+                "'1,5 Parts Absolut Vodka \n"+
+                "1,5 Parts Pineapple Juice \n"+
+                "Soda Water  \n"+
+                "1 Sprig Mint Leaf  \n"+
+                "Kostki lodu')");
 
     }
 }
