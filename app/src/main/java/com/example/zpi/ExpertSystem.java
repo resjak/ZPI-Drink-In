@@ -46,6 +46,7 @@ public class ExpertSystem extends AppCompatActivity {
        // drinkSelection();
 
         showQuestions();
+        btnBack.setVisibility(View.VISIBLE);
 
 }
 
@@ -1064,6 +1065,7 @@ public void hideButtons()
             //WHITE RUSSIAN
             hideButtons();
             txQuestion.setText(Database.show(database,"'White Russian'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
@@ -1072,7 +1074,7 @@ public void hideButtons()
             //Paradise Bay
             hideButtons();
             txQuestion.setText(Database.show(database,"'Paradise Bay'"));
-
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
@@ -1081,6 +1083,7 @@ public void hideButtons()
             //Pijany Kaktus
             hideButtons();
             txQuestion.setText(Database.show(database,"'Pijany Kaktus'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
@@ -1090,6 +1093,7 @@ public void hideButtons()
             //Blue Lagoon
             hideButtons();
             txQuestion.setText(Database.show(database,"'Blue Lagoon'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
@@ -1099,6 +1103,7 @@ public void hideButtons()
             //Absolute Spiced Apple Sour
             hideButtons();
             txQuestion.setText(Database.show(database,"'Absolut Spiced Apple sour'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
@@ -1109,6 +1114,7 @@ public void hideButtons()
             //Absolute pears
             hideButtons();
             txQuestion.setText(Database.show(database,"'Absolut pears'"));
+            btnBack.setVisibility(View.INVISIBLE);
 
         }
 
@@ -1117,6 +1123,7 @@ public void hideButtons()
             //Vodkatini
             hideButtons();
             txQuestion.setText(Database.show(database,"'Vodkatini'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
@@ -1125,6 +1132,7 @@ public void hideButtons()
             //Wodka Gibson
             hideButtons();
             txQuestion.setText(Database.show(database,"'Wódka Gibson'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
@@ -1133,6 +1141,7 @@ public void hideButtons()
             //Trip
             hideButtons();
             txQuestion.setText(Database.show(database,"'Trip'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
@@ -1141,6 +1150,7 @@ public void hideButtons()
             //North Pole
             hideButtons();
             txQuestion.setText(Database.show(database,"'North Pole'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
@@ -1149,6 +1159,7 @@ public void hideButtons()
             //Ballantines Old Twist
             hideButtons();
             txQuestion.setText(Database.show(database,"'Ballantines Old Twist'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
@@ -1157,6 +1168,7 @@ public void hideButtons()
             //Mitherning Bastard
             hideButtons();
             txQuestion.setText(Database.show(database,"'Mitherning Bastard'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
@@ -1165,6 +1177,7 @@ public void hideButtons()
             //Jameson Sprite and Lime
             hideButtons();
             txQuestion.setText(Database.show(database,"'Jameson Sprite and lime'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
@@ -1173,6 +1186,7 @@ public void hideButtons()
             //Whiskey & Cola Drink
             hideButtons();
             txQuestion.setText(Database.show(database,"'Whisky and Cola drink'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
         else if (A==1 && B==2 && zCzym==5 && GSW==1)
@@ -1180,6 +1194,7 @@ public void hideButtons()
             //French 75
             hideButtons();
             txQuestion.setText(Database.show(database,"'French 75'"));
+            btnBack.setVisibility(View.INVISIBLE);
 
         }
 
@@ -1189,6 +1204,7 @@ public void hideButtons()
             //Prosecco & Sprite
             hideButtons();
             txQuestion.setText(Database.show(database,"'Prosecco & Sprite'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
@@ -1197,6 +1213,7 @@ public void hideButtons()
             //Prosecco z Martini Fierro
             hideButtons();
             txQuestion.setText(Database.show(database,"'Prosecco z Martini Fierro'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
@@ -1205,6 +1222,7 @@ public void hideButtons()
             //Drink z szampanem i sokiem
             hideButtons();
             txQuestion.setText(Database.show(database,"'Drink z szampanem i sokiem'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
@@ -1213,6 +1231,7 @@ public void hideButtons()
             //Szampan z Truskawkami
             hideButtons();
             txQuestion.setText(Database.show(database,"'Szampan z truskawkami'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
@@ -1221,6 +1240,7 @@ public void hideButtons()
             //Szampan z arbuzem //brakuje INSERT
             hideButtons();
             txQuestion.setText(Database.show(database,"'Szampan z arbuzem'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
@@ -1229,6 +1249,7 @@ public void hideButtons()
             //Cotogna's Aperol Fizz
             hideButtons();
             txQuestion.setText(Database.show(database,"'Cotogna's Aperol Fizz'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
@@ -1237,6 +1258,7 @@ public void hideButtons()
             //Aperol Spritz
             hideButtons();
             txQuestion.setText(Database.show(database,"'Aperol Spritz'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
@@ -1246,6 +1268,7 @@ public void hideButtons()
             //Calimacho
             hideButtons();
             txQuestion.setText(Database.show(database,"'Calimacho'"));
+            btnBack.setVisibility(View.INVISIBLE);
 
         }
 
@@ -1255,6 +1278,7 @@ public void hideButtons()
             //Royal Mojito
             hideButtons();
             txQuestion.setText(Database.show(database,"'Royal Mojito'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
@@ -1263,6 +1287,7 @@ public void hideButtons()
             //Szprycer
             hideButtons();
             txQuestion.setText(Database.show(database,"'Szprycer'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
@@ -1272,6 +1297,7 @@ public void hideButtons()
             //Irish Coffee
             hideButtons();
             txQuestion.setText(Database.show(database,"'Irish Coffee'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
@@ -1280,6 +1306,7 @@ public void hideButtons()
             //Grzane piwo z pomarańc
             hideButtons();
             txQuestion.setText(Database.show(database,"'Grzane piwo z pomarańczą'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
@@ -1289,6 +1316,7 @@ public void hideButtons()
             //Grzaniec
             hideButtons();
             txQuestion.setText(Database.show(database,"'Grzaniec'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
@@ -1297,6 +1325,7 @@ public void hideButtons()
             //Poncz listopadowy
             hideButtons();
             txQuestion.setText(Database.show(database,"'Poncz Listopadowy'"));
+            btnBack.setVisibility(View.INVISIBLE);
 
         }
 
@@ -1306,6 +1335,7 @@ public void hideButtons()
             //Hot Toddy
             hideButtons();
             txQuestion.setText(Database.show(database,"'Hot Toddy'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
@@ -1314,6 +1344,7 @@ public void hideButtons()
             //Royal Tea
             hideButtons();
             txQuestion.setText(Database.show(database,"'Royal Tea'"));
+            btnBack.setVisibility(View.INVISIBLE);
 
         }
 
