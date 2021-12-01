@@ -14,9 +14,9 @@ public class ExpertSystem extends AppCompatActivity {
     SQLiteDatabase database;
     TextView txQuestion;
     Button btnAnsw1,btnAnsw2,btnAnsw3,btnAnsw4,
-            btnAnsw5,btnAnsw6,btnAnsw7,btnAnsw8;
+            btnAnsw5,btnAnsw6,btnAnsw7,btnAnsw8,btnBack;
     boolean b1Clicked=false, b2Clicked=false,b3Clicked=false,b4Clicked=false,
-            b5Clicked=false,b6Clicked=false,b7Clicked=false,b8Clicked=false;
+            b5Clicked=false,b6Clicked=false,b7Clicked=false,b8Clicked=false,btnBackClicked=false;
     String question;
 
     //Zmienne kontrolne - dla if'ów
@@ -39,6 +39,7 @@ public class ExpertSystem extends AppCompatActivity {
         btnAnsw6 = findViewById(R.id.btnAnswer6);
         btnAnsw7 = findViewById(R.id.btnAnswer7);
         btnAnsw8 = findViewById(R.id.btnAnswer8);
+        btnBack = findViewById(R.id.btnBack);
 
         database = openOrCreateDatabase("DRINKSDB",MODE_PRIVATE,null);
 
@@ -55,24 +56,30 @@ public void buttonsCheck() //ustawianie zmiennych kontrolnych adekwatnie do wci�
     {
         A=1; //z alkoholem
         b1Clicked=false;
+        goBack();
         showQuestions();
         drinkSelection();
+
     }
 
     if(question=="Drink z alkoholem czy bez?" && b2Clicked==true)
     {
         A=2; //bezalkoholowy
         b2Clicked=false;
+        goBack();
         showQuestions();
         drinkSelection();
+
     }
 
     if(question=="Drink ciepły czy zimny?" && b1Clicked==true)
     {
         B=1; //ciepły
         b1Clicked=false;
+        goBack();
         showQuestions();
         drinkSelection();
+
     }
 
 
@@ -82,6 +89,7 @@ public void buttonsCheck() //ustawianie zmiennych kontrolnych adekwatnie do wci�
         b2Clicked=false;
         showQuestions();
         drinkSelection();
+        goBack();
     }
 
     if(question=="Jaki ma być główny składnik drinka?" && b1Clicked==true)
@@ -1017,6 +1025,12 @@ public  void b8Click(View view)
 {
     b8Clicked = true;
     buttonsCheck();
+}
+
+public void bBackClicked(View view)
+{
+    btnBackClicked = true;
+    goBack();
 }
 
 
@@ -2086,7 +2100,7 @@ public void hideButtons()
         if(A==1 && B==2 && zCzym==1 && Smak==1 && SmakAdd==3)
         {
             question="Jakie owoce lubisz?";
-            //txQuestion.setText("Jakie owoce lubisz?");
+            txQuestion.setText("Jakie owoce lubisz?");
             txQuestion.setText(A+ " "+B+" "+zCzym+" "+Smak+" "+SmakAdd+" "+Inne);
 
 
@@ -2359,14 +2373,331 @@ public void hideButtons()
     }
 
 
-    public void goBack(View view)
-    {
-        A=0;B=0;C=0;D=0;zCzym=0;Smak=0;KSW=0;GCP=0;WTR=0;BKBW=0;
-                Barwa=0;Klimat=0;Kolor=0;SmakAdd=0;Ziarenkowe=0;Likier=0;
-                Ozdoba=0;Napoj=0;Sok=0;Gaz=0;GSW=0;DOM=0; Inne=0; AT=0;AS=0;RGW=0;
-                Gatunek=0; Jagodowe=0; Pestkowe=0;Cytrus=0; SokPros=0; Orzech=0; Skladnik=0;
 
-        Intent myIntent = new Intent(view.getContext(), MainActivity.class);
-        startActivity(myIntent);
+
+    public void goBack()
+    {
+        if(question=="Drink z alkoholem czy bez?" && btnBackClicked==true)
+        {
+            startActivity(new Intent(ExpertSystem.this, MainActivity.class));
+            btnBackClicked=false;
+        }
+
+
+        if(question=="Drink ciepły czy zimny?" && btnBackClicked==true)
+        {
+            A=0;
+            B=0;
+            btnBackClicked=false;
+            showQuestions();
+        }
+
+        if(question=="Jaki ma być główny składnik drinka?" && btnBackClicked==true)
+        {
+            A=1;
+            B=0;
+            zCzym=0;
+            btnBackClicked=false;
+            showQuestions();
+        }
+
+        if(question=="Wolisz drinka z wódką czystą czy smakową?" && btnBackClicked==true)
+        {
+            A=1;
+            B=0;
+            zCzym=1;
+            Smak=0; //wódka czysta
+            btnBackClicked=false;
+            showQuestions();
+        }
+
+        if(question=="Preferujesz smak słodki, kwaśny czy wytrawny?" && btnBackClicked==true)
+        {
+            KSW=0; //wytrawny
+            btnBackClicked=false;
+            showQuestions();
+        }
+
+        if(question=="Drink ma być kolorowy czy jednolity?" && btnBackClicked==true)
+        {
+            Barwa=0; //jednolity
+            btnBackClicked=false;
+            showQuestions();
+        }
+
+        if(question=="Jaki klimat chcesz poczuć?" && btnBackClicked==true)
+        {
+            Klimat=0; //rajska zatoka
+            btnBackClicked=false;
+            showQuestions();
+        }
+
+        if(question=="Który kolor wolisz?" && btnBackClicked==true)
+        {
+            Kolor=0; //zielony
+            btnBackClicked=false;
+            showQuestions();
+        }
+
+        if(question=="ziarno?" && btnBackClicked==true)
+        {
+            //gruszka
+            Ziarenkowe=0;
+            btnBackClicked=false;
+            showQuestions();
+        }
+
+        if(question=="Jaką ozdobę wolisz?" && btnBackClicked==true)
+        {
+            //Inne
+            Ozdoba=0;
+            btnBackClicked=false;
+            showQuestions();
+        }
+
+        if(question=="Wolisz sok czy napój gazowany?" && btnBackClicked==true)
+        {
+            Napoj=0; //napój gazowany
+            btnBackClicked=false;
+            showQuestions();
+        }
+
+
+        if(question=="Wolisz sok jabłkowy czy pomarańczowy?" && btnBackClicked==true)
+        {
+            Sok=0; //pomarańczowy
+            btnBackClicked=false;
+            showQuestions();
+        }
+
+        if(question=="Cola czy Sprite?" && btnBackClicked==true)
+        {
+            Gaz=0; //Sprite
+            btnBackClicked=false;
+            showQuestions();
+        }
+
+
+        if(question=="Wolisz sok z cytryny czy Prosecco?" && btnBackClicked==true)
+        {
+            SokPros=0; //Prosecco
+            btnBackClicked=false;
+            showQuestions();
+       }
+
+        if(question=="Które wino wolisz?" && btnBackClicked==true)
+        {
+            Gatunek=0; //wino białe
+            btnBackClicked=false;
+            showQuestions();
+        }
+
+
+        if(question=="Z dodatkiem ginu, Sprite'a czy wina?" && btnBackClicked==true)
+        {
+            GSW=0; //Wino
+            btnBackClicked=false;
+            showQuestions();
+        }
+
+
+        if(question=="Smak którego dodatku ma dominować?" && btnBackClicked==true)
+        {
+            DOM=0; //Inny olkohol
+            btnBackClicked=false;
+            showQuestions();
+        }
+
+
+        if(question=="Jaki likier wolisz?" && btnBackClicked==true)
+        {
+            Likier=0; //owocowy
+            btnBackClicked=false;
+            showQuestions();
+        }
+
+
+        if(question=="Wolisz arbuza czy truskawkę?" && btnBackClicked==true)
+        {
+            AT=0; //arbuz
+            btnBackClicked=false;
+            showQuestions();
+        }
+
+        if(question=="Na bazie kawy, herbaty, piwa czy wina?" && btnBackClicked==true)
+        {
+            A=1;
+            B=1;
+            C=0;
+            showQuestions();
+            btnBackClicked=false;
+
+        }
+
+        if(question=="Z dodatkiem wódki, whisky czy ginu?" && btnBackClicked==true)
+        {
+            A=1; B=1;  C=0;
+            D=0;
+            btnBackClicked=false;
+            showQuestions();
+        }
+
+        if(question=="Smak cytrusów, orzechów czy innych owoców?" && btnBackClicked==true)
+        {
+            A=1;
+            B=2;
+            Smak=0;
+            SmakAdd=0;
+            btnBackClicked=false;
+            showQuestions();
+        }
+
+
+        if(question=="Jaki cytrus lubisz najbardziej?" && btnBackClicked==true)
+        {
+            A=1;
+            B=2;
+            Smak=1;
+            SmakAdd=1;
+            Cytrus=0; //pomarańcza
+            btnBackClicked=false;
+            showQuestions();
+        }
+
+
+        if(question=="Jakie orzechy wolisz?" && btnBackClicked==true)
+        {
+            A=1;  B=2;  Smak=1;  SmakAdd=0;
+            Orzech=0;
+            btnBackClicked=false;
+            showQuestions();
+        }
+
+
+
+        if(question=="Jakie owoce lubisz?" && btnBackClicked==true)
+        {
+            A=1; B=2; zCzym=1; Smak=1; SmakAdd=0;
+            Inne=0;
+            btnBackClicked=false;
+            showQuestions();
+        }
+
+        if(question=="Który owoc Ci odpowiada?" && btnBackClicked==true)
+        {
+            A=1; B=2; zCzym=1; Smak=1; SmakAdd=3; Inne=0;
+            Pestkowe=0;
+            btnBackClicked=false;
+            showQuestions();
+        }
+
+
+        if(question == "Który z owoców wolisz?" && btnBackClicked==true)
+        {
+            A=1; B=2; zCzym=1; Smak=1; SmakAdd=3;  Inne=0;
+            Jagodowe=0;
+            btnBackClicked=false;
+            showQuestions();
+        }
+
+        if(question == "Który z wymienionych składników lubisz najbardziej?" && btnBackClicked==true)
+        {
+            A=1; B=2; zCzym=1; Smak=2; KSW=1;
+            Skladnik=0;
+            btnBackClicked=false;
+            showQuestions();
+        }
+
+        if(question == "Jaki drink wolisz?" && btnBackClicked==true)
+        {
+            A=0;
+            B=0;
+            btnBackClicked=false;
+            showQuestions();
+        }
+
+        if(question == "Czy drink ma być egzotyczny?" && btnBackClicked==true)
+        {
+            A=2; B=0;
+            C=0;
+            btnBackClicked=false;
+            showQuestions();
+        }
+
+        if(question == "Arbuz czy banan?" && btnBackClicked==true)
+        {
+            A=2; B=0;
+            C=0;
+            btnBackClicked=false;
+            showQuestions();
+        }
+
+        if(question == "Co wolisz bardziej?" && btnBackClicked==true)
+        {
+            A=2; B=0;
+            C=0;
+            btnBackClicked=false;
+            showQuestions();
+        }
+
+
+        if(question == "Który cytrus Ci odpowiada?" && btnBackClicked==true)
+        {
+            A=2; B=0;
+            C=0;
+            btnBackClicked=false;
+            showQuestions();
+        }
+
+
+        if(question == "Jaki dodatek wolisz?" && btnBackClicked==true)
+        {
+            A=1; B=2; zCzym=0;
+            AS=0;
+            btnBackClicked=false;
+            showQuestions();
+        }
+
+
+        if(question == "Jaki smak soku wolisz?" && btnBackClicked==true)
+        {
+            A=1;B=2; zCzym=8; AS=0;
+            GCP=0;
+            btnBackClicked=false;
+            showQuestions();
+        }
+
+
+
+        if(question == "Co preferujesz?" && btnBackClicked==true)
+        {
+            A=1;B=2; zCzym=8; AS=0;
+            WTR=0;
+            btnBackClicked=false;
+            showQuestions();
+
+        }
+
+        if(question == "Jaki smak likieru owocowego wolisz?" && btnBackClicked==true)
+        {
+            A=1; B=2; zCzym=7; Likier=0;
+            BKBW=0;
+            btnBackClicked=false;
+            showQuestions();
+        }
+
+
+        if(question == "Jaki alkohol ma być dodatkiem dominującym?" && btnBackClicked==true)
+        {
+            A=1; B=2; zCzym=6; DOM=0;
+            RGW=0; //wódka
+            btnBackClicked=false;
+            showQuestions();
+        }
+    }
+
+    public void mainMenu(View view)
+    {
+        startActivity(new Intent(ExpertSystem.this, MainActivity.class));
     }
 }
