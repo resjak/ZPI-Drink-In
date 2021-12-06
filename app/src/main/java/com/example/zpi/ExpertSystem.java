@@ -1113,7 +1113,7 @@ public void hideButtons()
         {
             //Absolute pears
             hideButtons();
-            txQuestion.setText(Database.show(database,"'Absolut pears'"));
+            txQuestion.setText(Database.show(database,"'Absolute Pears Lemonade'"));
             btnBack.setVisibility(View.INVISIBLE);
 
         }
@@ -1248,7 +1248,7 @@ public void hideButtons()
         {
             //Cotogna's Aperol Fizz
             hideButtons();
-            txQuestion.setText(Database.show(database,"'Cotogna's Aperol Fizz'"));
+            txQuestion.setText(Database.show(database,"'Cotogna`s Aperol Fizz'"));
             btnBack.setVisibility(View.INVISIBLE);
         }
 

@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
 
        Database.createTablesAndAddValues(database);
-      // deleteDatabase("DRINKSDB");
+      //deleteDatabase("DRINKSDB");
 
     }
 

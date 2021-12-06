@@ -31,6 +31,8 @@ public class Database {
         //To sprawdzenie jest potrzebne po to, żeby insert nie wykonywał się z każdym uruchomieniem (wszystko by się duplikowało)
         //np nazwy wyglądałyby tak: "Mojito Mojito Mojito Mojito" - apka uruchomiona 4 razy
 
+        database.execSQL("CREATE TABLE IF NOT EXISTS Favourites(drink_name VARCHAR, recipe VARCHAR,ingredients VARCHAR);");
+
 
      }
 
