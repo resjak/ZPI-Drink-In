@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ZPI">
         <activity
+            android:name=".FavsDrinks"
+            android:exported="true" />
+        <activity
             android:name=".DrinksList"
             android:exported="true" />
         <activity

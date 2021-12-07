@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         database = openOrCreateDatabase("DRINKSDB",MODE_PRIVATE,null);
 
 
-       Database.createTablesAndAddValues(database);
+      Database.createTablesAndAddValues(database);
       //deleteDatabase("DRINKSDB");
 
     }
@@ -47,5 +47,11 @@ public class MainActivity extends AppCompatActivity {
     public void exitApp(View view)
     {
         System.exit(1);
+    }
+
+    public void FavsPage(View view)
+    {
+        Intent myIntent = new Intent(view.getContext(), FavsDrinks.class);
+        startActivity(myIntent);
     }
 }

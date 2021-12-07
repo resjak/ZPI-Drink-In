@@ -17,6 +17,8 @@ public class Database {
 
         database.execSQL("CREATE TABLE IF NOT EXISTS Drinks(drink_name VARCHAR, recipe VARCHAR,ingredients VARCHAR);");
 
+        database.execSQL("CREATE TABLE IF NOT EXISTS Favourites(drink_name VARCHAR);");
+
         Cursor cursor = database.rawQuery("SELECT * FROM Drinks",null);
 
         //sprawdzenie czy w tabeli są dane
@@ -31,7 +33,7 @@ public class Database {
         //To sprawdzenie jest potrzebne po to, żeby insert nie wykonywał się z każdym uruchomieniem (wszystko by się duplikowało)
         //np nazwy wyglądałyby tak: "Mojito Mojito Mojito Mojito" - apka uruchomiona 4 razy
 
-        database.execSQL("CREATE TABLE IF NOT EXISTS Favourites(drink_name VARCHAR, recipe VARCHAR,ingredients VARCHAR);");
+
 
 
      }
