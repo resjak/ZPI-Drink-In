@@ -38,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
     public void drinkChoosePage(View view)
     {
         Intent myIntent = new Intent(view.getContext(), ExpertSystem.class);
@@ -54,4 +56,12 @@ public class MainActivity extends AppCompatActivity {
         Intent myIntent = new Intent(view.getContext(), FavsDrinks.class);
         startActivity(myIntent);
     }
+
+    public void ListPage(View view)
+    {
+        Intent myIntent = new Intent(view.getContext(), DrinksList.class);
+        startActivity(myIntent);
+    }
+
+
 }

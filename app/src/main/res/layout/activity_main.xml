@@ -62,6 +62,7 @@
         android:layout_marginTop="21dp"
         android:layout_marginEnd="144dp"
         android:layout_marginBottom="21dp"
+        android:onClick="ListPage"
         android:text="Spis drinków"
         app:layout_constraintBottom_toTopOf="@+id/btnExitApp"
         app:layout_constraintEnd_toEndOf="parent"

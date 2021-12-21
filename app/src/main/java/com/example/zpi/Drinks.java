@@ -287,7 +287,7 @@ public class Drinks extends AppCompatActivity {
 
 
 //HAIRLESS DUCK
-        database.execSQL("INSERT INTO Drinks VALUES('Harless Duck','Idealny drink dla smakoszy ajerkoniaku.', " +
+        database.execSQL("INSERT INTO Drinks VALUES('Hairless Duck','Idealny drink dla smakoszy ajerkoniaku.', " +
                 "'50 ml wódki\n" +
                 "15 ml rumu\n" +
                 "30 ml ajerkoniaku \n" +
@@ -461,14 +461,14 @@ public class Drinks extends AppCompatActivity {
 
 
 
-        database.execSQL("INSERT INTO Drinks VALUES('Monte z orzechem  Laskowym','Mleczno-orzechowy deserowy drink który poprawi każdemu nastrój  swoim smakiem i niebywałym wyglądem. Wersja z wódką o smaku orzechów laskowych. '," +
+        database.execSQL("INSERT INTO Drinks VALUES('Monte z orzechem laskowym','Mleczno-orzechowy deserowy drink który poprawi każdemu nastrój  swoim smakiem i niebywałym wyglądem. Wersja z wódką o smaku orzechów laskowych. '," +
                 "'200 ml wódki o smaku Orzecha Laskowego \n"+
                 "300 ml mleka 3,2% \n"+
                 "Kostki lodu')");//OK
 
 
 
-        database.execSQL("INSERT INTO Drinks VALUES('Monte z orzechem  włoskim','Mleczno-orzechowy deserowy drink który poprawi każdemu nastrój  swoim smakiem i niebywałym wyglądem. Wersja z wódką o smaku orzechów włoskich.'," +
+        database.execSQL("INSERT INTO Drinks VALUES('Monte z orzechem włoskim','Mleczno-orzechowy deserowy drink który poprawi każdemu nastrój  swoim smakiem i niebywałym wyglądem. Wersja z wódką o smaku orzechów włoskich.'," +
                 "'200 ml wódki o smaku orzecha włoskiego \n"+
                 "300 ml mleka 3,2% \n"+
                 "Kostki lodu')");//OK
@@ -639,8 +639,5 @@ public class Drinks extends AppCompatActivity {
 
     }
 
-    public static void insertToFavourites(SQLiteDatabase database,String name)
-    {
-        database.execSQL("INSERT INTO Favourites VALUES(''+name)");
-    }
+
 }

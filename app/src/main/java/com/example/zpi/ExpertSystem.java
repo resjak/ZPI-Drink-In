@@ -3,11 +3,15 @@ package com.example.zpi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import java.sql.PreparedStatement;
+import java.sql.Statement;
 
 public class ExpertSystem extends AppCompatActivity {
 
@@ -17,7 +21,7 @@ public class ExpertSystem extends AppCompatActivity {
             btnAnsw5,btnAnsw6,btnAnsw7,btnAnsw8,btnBack,btnFavs;
     boolean b1Clicked=false, b2Clicked=false,b3Clicked=false,b4Clicked=false,
             b5Clicked=false,b6Clicked=false,b7Clicked=false,b8Clicked=false,btnBackClicked=false,btnFavsClicked=false;
-    String question;
+    String question, whichDrink="none";
 
     //Zmienne kontrolne - dla if'ów
     int A=0,B=0,C=0,D=0,zCzym=0,Smak=0,KSW=0,GCP=0,WTR=0,BKBW=0,
@@ -48,7 +52,7 @@ public class ExpertSystem extends AppCompatActivity {
 
         showQuestions();
         btnBack.setVisibility(View.VISIBLE);
-
+        btnFavs.setVisibility(View.INVISIBLE);
 
 }
 
@@ -1038,14 +1042,39 @@ public void bBackClicked(View view)
 
 public  void bFavsClicked(View view)
 {
-    btnBackClicked=true;
+    if(whichDrink!="none")
+    {
+        checkAndAddFavourites(whichDrink);
+        checkFavourites(whichDrink);
+    }
+}
+
+public void checkFavourites(String drinkName)
+{
+
+        Cursor cursor = database.rawQuery("SELECT * FROM Favourites WHERE drink_name=" + drinkName, null);
+
+        if (cursor.moveToFirst()) {
+            btnFavs.setVisibility(View.INVISIBLE);
+        } else {
+            btnFavs.setVisibility(View.VISIBLE);
+        }
 }
 
 
+public void checkAndAddFavourites(String drinkName)
+    {
 
+        Cursor cursor = database.rawQuery("SELECT * FROM Favourites WHERE drink_name=" + drinkName, null);
 
+        if (cursor.moveToFirst()) {
+            btnFavs.setVisibility(View.INVISIBLE);
+        } else {
+            btnFavs.setVisibility(View.VISIBLE);
 
-
+            database.execSQL("INSERT INTO  Favourites  Values ("+drinkName+")");
+        }
+    }
 
 
 public void hideButtons()
@@ -1063,38 +1092,40 @@ public void hideButtons()
 
 
 
-
     public void drinkSelection() //ostateczne wyniki
     {
 
         if (A==1 & B==2 && zCzym==1 && Smak==2 && KSW==2 && Barwa==1 && Klimat==2)
         {
             //WHITE RUSSIAN
+            whichDrink="'White Russian'";
+            checkFavourites("'White Russian'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'White Russian'"));
+            btnBack.setVisibility(View.INVISIBLE);
+
         }
 
 
         else if (A==1 && B==2 && Smak==2 && KSW==2 && Barwa==1 && Klimat==3)
         {
             //Paradise Bay
+            whichDrink="'Paradise Bay'";
+            checkFavourites("'Paradise Bay'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Paradise Bay'"));
-
-            if(btnFavsClicked==true)
-            {
-                Drinks.insertToFavourites(database,"Paradise Bay");
-                btnFavsClicked=false;
-            }
-
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
         else  if (A==1 && B==2 && zCzym==1 && Smak==2 && KSW==2 && Barwa==2 && Kolor==1)
         {
             //Pijany Kaktus
+            whichDrink="'Pijany Kaktus'";
+            checkFavourites("'Pijany Kaktus'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Pijany Kaktus'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
@@ -1102,8 +1133,11 @@ public void hideButtons()
         else  if (A==1 && B==2 && zCzym==1 && Smak==2 && KSW==2 && Barwa==2 && Kolor==2)
         {
             //Blue Lagoon
+            whichDrink="'Blue Lagoon'";
+            checkFavourites("'Blue Lagoon'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Blue Lagoon'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
@@ -1111,8 +1145,11 @@ public void hideButtons()
         else  if (A==1 && B==2 && zCzym==1 && Smak==1 && SmakAdd==3 && Inne==3 && Ziarenkowe==2)
         {
             //Absolute Spiced Apple Sour
+            whichDrink="'Absolut Spiced Apple Sour'";
+            checkFavourites("'Absolut Spiced Apple Sour'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Absolut Spiced Apple sour'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
@@ -1121,78 +1158,108 @@ public void hideButtons()
         else if (A==1  && B==2 &&  zCzym==1 && Smak==1 && SmakAdd==3 && Inne==3 && Ziarenkowe==3)
         {
             //Absolute pears
+            whichDrink="'Absolut Pears Lemonade'";
+            checkFavourites("'Absolut Pears Lemonade'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Absolut Pears Lemonade'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
         else  if (A==1 && B==2 && zCzym==1 && Smak==2 && KSW==3 && Ozdoba==1)
         {
             //Vodkatini
+            whichDrink="'Vodkatini'";
+            checkFavourites("'Vodkatini'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Vodkatini'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
         else  if (A==1 && B==2 && zCzym==1 && Smak==2 && KSW==3 && Ozdoba==2)
         {
             //Wodka Gibson
+            whichDrink="'Wódka Gibson'";
+            checkFavourites("'Wódka Gibson'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Wódka Gibson'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
         else  if (A==1 && B==2 && zCzym==1 && Smak==2 && KSW==3 && Ozdoba==3)
         {
             //Trip
+            whichDrink="'Trip'";
+            checkFavourites("'Trip'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Trip'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
         else  if (A==1 && B==2 && Smak==2 && KSW==3 && Ozdoba==4)
         {
             //North Pole
+            whichDrink="'North Pole'";
+            checkFavourites("'North Pole'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'North Pole'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
         else if (A==1 && B==2 && zCzym==2 && Napoj==1 && Sok==1)
         {
             //Ballantines Old Twist
+            whichDrink="'Ballantines Old Twist'";
+            checkFavourites("'Ballantines Old Twist'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Ballantines Old Twist'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
         else  if (A==1 && B==2 &&  zCzym==2 && Napoj==1 && Sok==2)
         {
             //Mitherning Bastard
+            whichDrink="'Mithering Bastard'";
+            checkFavourites("'Mithering Bastard'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Mitherning Bastard'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
         else if (A==1 && B==2 && zCzym==2 && Napoj==2 && Gaz==1)
         {
             //Jameson Sprite and Lime
+            whichDrink="'Jameson Sprite and Lime'";
+            checkFavourites("'Jameson Sprite and Lime'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Jameson Sprite and lime'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
         else  if (A==1 && B==2 && zCzym==2 && Napoj==2 && Gaz==2)
         {
             //Whiskey & Cola Drink
+            whichDrink="'Whisky and Cola drink'";
+            checkFavourites("'Whisky and Cola drink'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Whisky and Cola drink'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
         else if (A==1 && B==2 && zCzym==5 && GSW==1)
         {
             //French 75
+            whichDrink="'French 75'";
+            checkFavourites("'French 75'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'French 75'"));
+            btnBack.setVisibility(View.INVISIBLE);
 
         }
 
@@ -1200,56 +1267,77 @@ public void hideButtons()
         else  if (A==1  && B==2 && zCzym==5 && GSW==2)
         {
             //Prosecco & Sprite
+            whichDrink="'Prosecco & Sprite'";
+            checkFavourites("'Prosecco & Sprite'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Prosecco & Sprite'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
         else if (A==1  && B==2 && zCzym==5 && GSW==3)
         {
             //Prosecco z Martini Fierro
+            whichDrink="'Prosecco z Martini Fierro'";
+            checkFavourites("'Prosecco z Martini Fierro'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Prosecco z Martini Fierro'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
         else if (A==1 && B==2 && zCzym==6 && DOM==1)
         {
             //Drink z szampanem i sokiem
+            whichDrink="'Drink z szampanem i sokiem'";
+            checkFavourites("'Drink z szampanem i sokiem'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Drink z szampanem i sokiem'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
         else  if (A==1 && B==2 && zCzym==6 && DOM==2 && AT==1)
         {
             //Szampan z Truskawkami
+            whichDrink="'Szampan z truskawkami'";
+            checkFavourites("'Szampan z truskawkami'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Szampan z truskawkami'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
         else  if (A==1 && B==2 && zCzym==6 && DOM==2 && AT==2)
         {
-            //Szampan z arbuzem //brakuje INSERT
+            //Szampan z arbuzem
+            whichDrink="'Szampan z arbuzem'";
+            checkFavourites("'Szampan z arbuzem'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Szampan z arbuzem'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
         else  if (A==1 && B==2 && zCzym==3 && SokPros==1)
         {
             //Cotogna's Aperol Fizz
+            whichDrink="'Cotogna`s Aperol Fizz'";
+            checkFavourites("'Cotogna`s Aperol Fizz'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Cotogna`s Aperol Fizz'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
         else  if (A==1 && B==2 && zCzym==3 && SokPros==2)
         {
             //Aperol Spritz
+            whichDrink="'Aperol Spritz'";
+            checkFavourites("'Aperol Spritz'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Aperol Spritz'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
@@ -1257,8 +1345,11 @@ public void hideButtons()
         else if (A==1 && B==2 && zCzym==4 && Gatunek==1)
         {
             //Calimacho
+            whichDrink="'Calimacho'";
+            checkFavourites("'Calimacho'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Calimacho'"));
+            btnBack.setVisibility(View.INVISIBLE);
 
         }
 
@@ -1266,16 +1357,22 @@ public void hideButtons()
         else if (A==1 && B==2 && zCzym==4 && Gatunek==2)
         {
             //Royal Mojito
+            whichDrink="'Royal Mojito'";
+            checkFavourites("'Royal Mojito'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Royal Mojito'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
         else if (A==1 && B==2 && zCzym==4 && Gatunek==3)
         {
             //Szprycer
+            whichDrink="'Szprycer'";
+            checkFavourites("'Szprycer'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Szprycer'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
@@ -1283,16 +1380,22 @@ public void hideButtons()
         {
 
             //Irish Coffee
+            whichDrink="'Irish Coffee'";
+            checkFavourites("'Irish Coffee'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Irish Coffee'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
         else if(A==1 && B==1 && C==3)
         {
             //Grzane piwo z pomarańc
+            whichDrink="'Grzane piwo z pomarańczą'";
+            checkFavourites("'Grzane piwo z pomarańczą'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Grzane piwo z pomarańczą'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
@@ -1300,16 +1403,22 @@ public void hideButtons()
         {
 
             //Grzaniec
+            whichDrink="'Grzaniec'";
+            checkFavourites("'Grzaniec'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Grzaniec'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
         else if(A==1 && B==1 && C==2 && D==1)
         {
             //Poncz listopadowy
+            whichDrink="'Poncz listopadowy'";
+            checkFavourites("'Poncz listopadowy'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Poncz listopadowy'"));
+            btnBack.setVisibility(View.INVISIBLE);
 
         }
 
@@ -1317,16 +1426,22 @@ public void hideButtons()
         else if(A==1 && B==1 && C==2 && D==2)
         {
             //Hot Toddy
+            whichDrink="'Hot Toddy'";
+            checkFavourites("'Hot Toddy'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Hot Toddy'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
         else if(A==1 && B==1 && C==2 && D==3)
         {
             //Royal Tea
+            whichDrink="'Royal Tea'";
+            checkFavourites("'Royal Tea'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Royal Tea'"));
+            btnBack.setVisibility(View.INVISIBLE);
 
         }
 
@@ -1336,30 +1451,42 @@ public void hideButtons()
         else if(A==1 && B==2 && zCzym==1 && Smak==1 && SmakAdd==1 && Cytrus==1)
         {
             //The Swedish Paloma
+            whichDrink="'The Swedish Paloma'";
+            checkFavourites("'The Swedish Paloma'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'The Swedish Paloma'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
         else  if(A==1 && B==2 && zCzym==1 && Smak==1 && SmakAdd==1 && Cytrus==2)
         {
             //Vodka Mojito
+            whichDrink="'Vodka Mojito'";
+            checkFavourites("'Vodka Mojito'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Vodka Mojito'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
         else if(A==1 && B==2 && zCzym==1 && Smak==1 && SmakAdd==1 && Cytrus==3)
         {
             //Trucizna Wdowy
+            whichDrink="'Trucizna Wdowy'";
+            checkFavourites("'Trucizna Wdowy'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Trucizna Wdowy'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
         else if(A==1 && B==2 && zCzym==1 && Smak==1 && SmakAdd==1 && Cytrus==4)
         {
             //Orange Cosmo
+            whichDrink="'Orange Cosmo'";
+            checkFavourites("'Orange Cosmo'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Orange Cosmo'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
@@ -1367,8 +1494,11 @@ public void hideButtons()
         else if(A==1 && B==2 && zCzym==1 && Smak==1 && SmakAdd==2 && Orzech==1)
         {
             //Monte z orzechem  Laskowym
+            whichDrink="'Monte z orzechem laskowym'";
+            checkFavourites("'Monte z orzechem laskowym'");
             hideButtons();
-            txQuestion.setText(Database.show(database,"'Monte z orzechem  Laskowym'"));
+            txQuestion.setText(Database.show(database,"'Monte z orzechem laskowym'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
@@ -1376,46 +1506,64 @@ public void hideButtons()
         else  if(A==1 && B==2 && zCzym==1 && Smak==1 && SmakAdd==2 && Orzech==2)
         {
             //Monte z orzechem  Włoskim
+            whichDrink="'Monte z orzechem włoskim'";
+            checkFavourites("'Monte z orzechem włoskim'");
             hideButtons();
-            txQuestion.setText(Database.show(database,"'Monte z orzechem  włoskim'"));
+            txQuestion.setText(Database.show(database,"'Monte z orzechem włoskim'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
         else if(A==1 && B==2 && zCzym==1 && Smak==1 && SmakAdd==3 && Inne==1 && Pestkowe==1)
         {
             //Halves
+            whichDrink="'Heves'";
+            checkFavourites("'Heves'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Heves'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
         else if(A==1 && B==2 && zCzym==1 && Smak==1 && SmakAdd==3 && Inne==1 && Pestkowe==2)
         {
             //Cherry Kiss
+            whichDrink="'Cherry Kiss'";
+            checkFavourites("'Cherry Kiss'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Cherry Kiss'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
         else if(A==1 && B==2 && zCzym==1 && Smak==1 && SmakAdd==3 && Inne==1 && Pestkowe==3)
         {
             //Sapodill Fizz
+            whichDrink="'Sapodill Fizz'";
+            checkFavourites("'Sapodill Fizz'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Sapodill Fizz'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
         else if(A==1 && B==2 && zCzym==1 && Smak==2 && KSW==1 && Skladnik==1)
         {
             //Busines Time
+            whichDrink="'Business Time'";
+            checkFavourites("'Business Time'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Business Time'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
         else if(A==1 && B==2 && zCzym==1 && Smak==2 && KSW==1 && Skladnik==2)
         {
             //Cherry vodka sour
+            whichDrink="'Cherry vodka sour'";
+            checkFavourites("'Cherry vodka sour'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Cherry vodka sour'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
@@ -1423,137 +1571,194 @@ public void hideButtons()
         else if(A==1 && B==2 && zCzym==1 && Smak==2 && KSW==1 && Skladnik==3)
         {
             //Caipiroska
+            whichDrink="'Caipiroska'";
+            checkFavourites("'Caipiroska'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Caipiroska'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
         else if(A==1 && B==2 && zCzym==1 && Smak==2 && KSW==2 && Barwa==1 && Klimat==1)
         {
             //Vodka Sunrise
+            whichDrink="'Vodka Sunrise'";
+            checkFavourites("'Vodka Sunrise'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Vodka Sunrise'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
         else if(A==1 && B==2 && zCzym==1 && Smak==1 && SmakAdd==3 && Inne==2 && Jagodowe==1)
         {
             //Malinowa Rozkosz
+            whichDrink="'Malinowa Rozkosz'";
+            checkFavourites("'Malinowa Rozkosz'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Malinowa Rozkosz'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
         else if(A==1 && B==2 && zCzym==1 && Smak==1 && SmakAdd==3 && Inne==2 && Jagodowe==2)
         {
             //Finlandia cranberry brisk
+            whichDrink="'Finlandia Cranberry Brisk'";
+            checkFavourites("'Finlandia Cranberry Brisk'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Finlandia Cranberry Brisk'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
         else if(A==1 && B==2 && zCzym==1 && Smak==1 && SmakAdd==3 && Inne==2 && Jagodowe==3)
         {
             //Blackcurrant Sea Breeze
+            whichDrink="'Blackcurrant Sea Breeze'";
+            checkFavourites("'Blackcurrant Sea Breeze'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Blackcurrant Sea Breeze'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
         else if(A==1 && B==2 && zCzym==1 && Smak==1 && SmakAdd==3 && Inne==3 && Ziarenkowe==1)
         {
             //Sok z gumijagód
+            whichDrink="'Sok z Gumijagód'";
+            checkFavourites("'Sok z Gumijagód'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Sok z Gumijagód'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
         else if(A==2 && B==4 && C==12)
         {
             //Czerwona siła
+            whichDrink="'Czerwona siła'";
+            checkFavourites("'Czerwona siła'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Czerwona siła'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
         else if(A==2 && B==4 && C==11)
         {
             //Bezkrwawa Mary
+            whichDrink="'Bezkrwawa Mary'";
+            checkFavourites("'Bezkrwawa Mary'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Bezkrwawa Mary'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
         else if(A==2 && B==3 && C==10)
         {
             //Dwukolorowy banan
+            whichDrink="'Dwukolorowy banan'";
+            checkFavourites("'Dwukolorowy banan'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Dwukolorowy banan'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
         else if(A==2 && B==3 && C==9)
         {
             //arbuzowa pszność
+            whichDrink="'Arbuzowa pyszność'";
+            checkFavourites("'Arbuzowa pyszność'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Arbuzowa pyszność'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
         else if(A==2 && B==2 && C==8)
         {
             //Pinacolada
+            whichDrink="'Pinacolada'";
+            checkFavourites("'Pinacolada'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Pinacolada'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
         else if(A==2 && B==2 && C==7)
         {
             //Słodka Shirley Temple
+            whichDrink="'Słodka Shirley Temple'";
+            checkFavourites("'Słodka Shirley Temple'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Słodka Shirley Temple'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
         else if(A==2 && B==1 && C==6)
         {
             //Drink z Curacao
+            whichDrink="'Drink z Curacao'";
+            checkFavourites("'Drink z Curacao'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Drink z Curacao'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
         else if(A==2 && B==1 && C==5)
         {
             //Drink Mojito
+            whichDrink="'Drink z Mojito'";
+            checkFavourites("'Drink z Mojito'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Drink z Mojito'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
         else if(A==1 && B==2 && zCzym==8 && AS==2 && WTR==3)
         {
             //Piwne Mojito
+            whichDrink="'Piwne Mojito'";
+            checkFavourites("'Piwne Mojito'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Piwne Mojito'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
         else if(A==1 && B==2 && zCzym==8 && AS==2 && WTR==2)
         {
             //El Diablo
+            whichDrink="'El Diablo'";
+            checkFavourites("'El Diablo'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'El Diablo'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
         else if(A==1 && B==2 && zCzym==8 && AS==2 && WTR==1)
         {
             //Moscow Mule
+            whichDrink="'Mosscow Mule'";
+            checkFavourites("'Mosscow Mule'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Mosscow Mule'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
         else if(A==1 && B==2 && zCzym==8 && AS==1 && GCP==3)
         {
             //Russ Grejpfrutowy
+            whichDrink="'Russ Grejpfrutowy'";
+            checkFavourites("'Russ Grejpfrutowy'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Russ Grejpfrutowy'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
         else if(A==1 && B==2 && zCzym==8 && AS==1 && GCP==1)
         {
             //Cerveza Preparada
+            whichDrink="'Cerveza Preparada'";
+            checkFavourites("'Cerveza Preparada'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Cerveza Preparada'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
@@ -1561,86 +1766,122 @@ public void hideButtons()
         else if(A==1 && B==2 && zCzym==8 && AS==1 && GCP==2)
         {
             //Piwo z sokiem z czarnej porzeczki
+            whichDrink="'Piwo z sokiem z czarnej porzeczki'";
+            checkFavourites("'Piwo z sokiem z czarnej porzeczki'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Piwo z sokiem z czarnej porzeczki'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
         else if(A==1 && B==2 && zCzym==7 && Likier==2)
         {
             //Czarny Rosjanin
+            whichDrink="'Czarny Rosjanin'";
+            checkFavourites("'Czarny Rosjanin'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Czarny Rosjanin'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
         else if(A==1 && B==2 && zCzym==7 && Likier==1)
         {
             //Hairless Duck
+            whichDrink="'Hairless Duck'";
+            checkFavourites("'Hairless Duck'");
             hideButtons();
-            txQuestion.setText(Database.show(database,"'Harless Duck'"));
+            txQuestion.setText(Database.show(database,"'Hairless Duck'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
         else if(A==1 && B==2 && zCzym==7 && Likier==3 && BKBW==4)
         {
             //Red Cherry
+            whichDrink="'Red Cherry'";
+            checkFavourites("'Red Cherry'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Red Cherry'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
         else if(A==1 && B==2 && zCzym==7 && Likier==3 && BKBW==3)
         {
             //Bananaball
+            whichDrink="'Bananaball'";
+            checkFavourites("'Bananaball'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Bananaball'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
         else if(A==1 && B==2 && zCzym==7 && Likier==3 && BKBW==2)
         {
             //Malibu Sunrise
+            whichDrink="'Malibu Sunrise'";
+            checkFavourites("'Malibu Sunrise'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Malibu Sunrise'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
         else if(A==1 && B==2 && zCzym==7 && Likier==3 && BKBW==1)
         {
             //Mississippi Schnaper
+            whichDrink="'Mississippi Schnapper'";
+            checkFavourites("'Mississippi Schnapper'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Mississippi Schnapper'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
         else if(A==1 && B==2 && zCzym==6 && DOM==3 && RGW==3)
         {
             //Szampan z wódką
+            whichDrink="'Szampan z wódką'";
+            checkFavourites("'Szampan z wódką'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Szampan z wódką'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
         else if(A==1 && B==2 && zCzym==6 && DOM==3 && RGW==2)
         {
             //Szampan z ginem
+            whichDrink="'Szampan z ginem'";
+            checkFavourites("'Szampan z ginem'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Szampan z ginem'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
         else if(A==1 && B==2 && zCzym==6 && DOM==3 && RGW==1)
         {
             //Szampan z rumem
+            whichDrink="'Szampan z rumem'";
+            checkFavourites("'Szampan z rumem'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Szampan z rumem'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
         else if(A==2 && B==1 && C==50)
         {
             //Mojito
+            whichDrink="'Mojito'";
+            checkFavourites("'Mojito'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Mojito'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
         else if(A==2 && B==1 && C==4)
         {
             //Pomarańczowe orzezwienie
+            whichDrink="'Pomarańczowe orzeźwienie'";
+            checkFavourites("'Pomarańczowe orzeźwienie'");
             hideButtons();
             txQuestion.setText(Database.show(database,"'Pomarańczowe orzeźwienie'"));
+            btnBack.setVisibility(View.INVISIBLE);
         }
 
 
@@ -2450,51 +2691,43 @@ public void hideButtons()
 
         if(question=="Preferujesz smak słodki, kwaśny czy wytrawny?" && btnBackClicked==true)
         {
-            KSW=0; //wytrawny
+            A=1;  B=2; zCzym=1; Smak=2;
             btnBackClicked=false;
             showQuestions();
         }
 
         if(question=="Drink ma być kolorowy czy jednolity?" && btnBackClicked==true)
         {
-            Barwa=0; //jednolity
+            A=1; B=2; zCzym=1; Smak=2; KSW=2;
             btnBackClicked=false;
             showQuestions();
         }
 
         if(question=="Jaki klimat chcesz poczuć?" && btnBackClicked==true)
         {
-            Klimat=0; //rajska zatoka
+            A=1; B=2; zCzym=1; Smak=2; KSW=2; Barwa=1;
             btnBackClicked=false;
             showQuestions();
         }
 
         if(question=="Który kolor wolisz?" && btnBackClicked==true)
         {
-            Kolor=0; //zielony
+            A=1; B=2; zCzym=1; Smak=2; KSW=2; Barwa=2;
             btnBackClicked=false;
             showQuestions();
         }
 
-        if(question=="Który owoc ziarenkowy wolisz?" && btnBackClicked==true)
-        {
-            //gruszka
-            Ziarenkowe=0;
-            btnBackClicked=false;
-            showQuestions();
-        }
 
         if(question=="Jaką ozdobę wolisz?" && btnBackClicked==true)
         {
-            //Inne
-            Ozdoba=0;
+            A=1; B=2; zCzym=1; Smak=2; KSW=0;
             btnBackClicked=false;
             showQuestions();
         }
 
         if(question=="Wolisz sok czy napój gazowany?" && btnBackClicked==true)
         {
-            Napoj=0; //napój gazowany
+            A=1; B=2; zCzym=2;
             btnBackClicked=false;
             showQuestions();
         }
@@ -2502,14 +2735,14 @@ public void hideButtons()
 
         if(question=="Wolisz sok jabłkowy czy pomarańczowy?" && btnBackClicked==true)
         {
-            Sok=0; //pomarańczowy
+            A=1; B=2; zCzym=2; Napoj=1;
             btnBackClicked=false;
             showQuestions();
         }
 
         if(question=="Cola czy Sprite?" && btnBackClicked==true)
         {
-            Gaz=0; //Sprite
+            A=1; B=2; zCzym=2; Napoj=0;
             btnBackClicked=false;
             showQuestions();
         }
@@ -2517,14 +2750,14 @@ public void hideButtons()
 
         if(question=="Wolisz sok z cytryny czy Prosecco?" && btnBackClicked==true)
         {
-            SokPros=0; //Prosecco
+            A=1; B=2; zCzym=0;
             btnBackClicked=false;
             showQuestions();
        }
 
         if(question=="Które wino wolisz?" && btnBackClicked==true)
         {
-            Gatunek=0; //wino białe
+            A=1;  B=2;  zCzym=0;
             btnBackClicked=false;
             showQuestions();
         }
@@ -2532,7 +2765,7 @@ public void hideButtons()
 
         if(question=="Z dodatkiem ginu, Sprite'a czy wina?" && btnBackClicked==true)
         {
-            GSW=0; //Wino
+            A=1; B=2; zCzym=0;
             btnBackClicked=false;
             showQuestions();
         }
@@ -2540,7 +2773,7 @@ public void hideButtons()
 
         if(question=="Smak którego dodatku ma dominować?" && btnBackClicked==true)
         {
-            DOM=0; //Inny olkohol
+            A=1; B=2; zCzym=0;
             btnBackClicked=false;
             showQuestions();
         }
@@ -2548,7 +2781,7 @@ public void hideButtons()
 
         if(question=="Jaki likier wolisz?" && btnBackClicked==true)
         {
-            Likier=0; //owocowy
+            A=1;  B=2; zCzym=0;
             btnBackClicked=false;
             showQuestions();
         }
@@ -2556,7 +2789,7 @@ public void hideButtons()
 
         if(question=="Wolisz arbuza czy truskawkę?" && btnBackClicked==true)
         {
-            AT=0; //arbuz
+            A=1; B=2;  zCzym=6;  DOM=0;
             btnBackClicked=false;
             showQuestions();
         }
@@ -2564,8 +2797,7 @@ public void hideButtons()
         if(question=="Na bazie kawy, herbaty, piwa czy wina?" && btnBackClicked==true)
         {
             A=1;
-            B=1;
-            C=0;
+            B=0;
             showQuestions();
             btnBackClicked=false;
 
