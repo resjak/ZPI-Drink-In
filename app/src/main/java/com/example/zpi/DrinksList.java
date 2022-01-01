@@ -50,7 +50,7 @@ public class DrinksList extends AppCompatActivity {
         while (cursor.moveToNext()) {
 
             String name = cursor.getString(0);
-            buffer.append(name +"\n");
+            buffer.append(name +"\n"+"\n");
 
         }
         return buffer.toString();

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:background="#FFFFFF"
     tools:context=".ExpertSystem">
 
     <TextView
@@ -14,6 +15,7 @@
         android:layout_marginTop="78dp"
         android:layout_marginEnd="195dp"
         android:text="TextView"
+        android:textColor="#14213D"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,6 +33,7 @@
         android:layout_marginBottom="5dp"
         android:onClick="b1Click"
         android:text="Button"
+        android:background="#FCA311"
         app:layout_constraintBottom_toTopOf="@+id/btnAnswer3"
         app:layout_constraintEnd_toStartOf="@+id/btnAnswer2"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,6 +49,7 @@
         android:layout_marginBottom="5dp"
         android:onClick="b2Click"
         android:text="Button"
+        android:background="#FCA311"
         app:layout_constraintBottom_toTopOf="@+id/btnAnswer4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnAnswer1"
@@ -61,6 +65,7 @@
         android:layout_marginBottom="5dp"
         android:onClick="b3Click"
         android:text="Button"
+        android:background="#FCA311"
         app:layout_constraintBottom_toTopOf="@+id/btnAnswer5"
         app:layout_constraintEnd_toStartOf="@+id/btnAnswer4"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,6 +81,7 @@
         android:layout_marginBottom="5dp"
         android:onClick="b4Click"
         android:text="Button"
+        android:background="#FCA311"
         app:layout_constraintBottom_toTopOf="@+id/btnAnswer6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnAnswer3"
@@ -91,6 +97,7 @@
         android:layout_marginBottom="5dp"
         android:onClick="b5Click"
         android:text="Button"
+        android:background="#FCA311"
         app:layout_constraintBottom_toTopOf="@+id/btnAnswer7"
         app:layout_constraintEnd_toStartOf="@+id/btnAnswer6"
         app:layout_constraintStart_toStartOf="parent"
@@ -106,6 +113,7 @@
         android:layout_marginBottom="5dp"
         android:onClick="b6Click"
         android:text="Button"
+        android:background="#FCA311"
         app:layout_constraintBottom_toTopOf="@+id/btnAnswer8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnAnswer5"
@@ -121,10 +129,27 @@
         android:layout_marginBottom="100dp"
         android:onClick="b7Click"
         android:text="Button"
+        android:background="#FCA311"
         app:layout_constraintBottom_toTopOf="@+id/btnBack"
         app:layout_constraintEnd_toStartOf="@+id/btnAnswer8"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnAnswer5" />
+
+    <Button
+        android:id="@+id/btnFavs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="119dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="120dp"
+        android:layout_marginBottom="88dp"
+        android:background="#FCA311"
+        android:onClick="bFavsClicked"
+        android:text="Dodaj do ulubionych"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAnswer7" />
 
     <Button
         android:id="@+id/btnAnswer8"
@@ -136,6 +161,7 @@
         android:layout_marginBottom="100dp"
         android:onClick="b8Click"
         android:text="Button"
+        android:background="#FCA311"
         app:layout_constraintBottom_toTopOf="@+id/btnExit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnAnswer7"
@@ -151,6 +177,7 @@
         android:layout_marginBottom="16dp"
         android:onClick="bBackClicked"
         android:text="Powrót"
+        android:background="#FCA311"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnExit"
         app:layout_constraintStart_toStartOf="parent"
@@ -166,23 +193,9 @@
         android:layout_marginBottom="16dp"
         android:onClick="mainMenu"
         android:text="Menu "
+        android:background="#FCA311"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnBack"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btnFavs"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="135dp"
-        android:layout_marginTop="23dp"
-        android:layout_marginEnd="135dp"
-        android:layout_marginBottom="29dp"
-        android:onClick="bFavsClicked"
-        android:text="Dodaj do ulubionych"
-        app:layout_constraintBottom_toTopOf="@+id/btnBack"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnAnswer8" />
 </androidx.constraintlayout.widget.ConstraintLayout>
