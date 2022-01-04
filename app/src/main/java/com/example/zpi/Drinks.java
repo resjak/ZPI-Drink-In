@@ -10,7 +10,78 @@ public class Drinks extends AppCompatActivity {
 
     public static void insertToDatabase(SQLiteDatabase database)
     {
-        //CAIPOROSKA
+        //MISSISSIPPI SCHNAPPER
+        database.execSQL("INSERT INTO Drinks VALUES( 'Mississippi Schnapper', ' \n \n Ten elegancki drink jest idealny \n do spotkań biznesowych. \n Będzie doskonały podczas ważnych \n uroczystości.\n',"+
+                "'🍹 40 ml Whiskey\n"+
+                " 🍹 10 ml Cointreau\n"+
+                " 🍹 10 ml syrop cukrowy \n"+
+                " 🍹 10 ml soku z limonki\n"+
+                " 🍹 20 ml likier brzoskwiniowy\n')");//OK
+
+//NORTH POLE
+        database.execSQL("INSERT INTO Drinks VALUES( 'North Pole', ' \n \n Ten rozpływający się w ustach napój \n zawiera kilka naprawdę bogatych \n smaków i ładnie je równoważy w tym \n dekadenckim \n czekoladowym koktajlu.\n',"+
+                "'🍹 lód\n"+
+                " 🍹 1 Porcja Gin\n"+
+                " 🍹 1 Porcja Swedish Punsch\n')"); //OK
+
+//TRIP
+        database.execSQL("INSERT INTO Drinks VALUES('Trip', ' \n \n Ziołowy koktajl z winem podawany \n jako aperitif.\n',"+
+                "' 🍹 40 ml Southern Comfort\n "+
+                "  🍹 wytrawne wino musujące\n "+
+                "  🍹 kawałek skórki pomarańczowej\n ')");//OK
+
+//VODKATINI
+        database.execSQL("INSERT INTO Drinks VALUES('Vodkatini', ' \n \n Bardzo popularna wariacja na temat \n Martini, czyli Martini z wódką \n (Vodkatini).\n ',"+
+                "'🍹 50 ml wódki\n"+
+                " 🍹 15 ml białego wytrawnego wermutu\n"+
+                " 🍹 kostki lodu\n"+
+                " 🍹 skórka cytryny\n')");//OK
+
+//WÓDKA GIBSON
+        database.execSQL("INSERT INTO Drinks VALUES('Wódka Gibson', ' \n \n Gibson to mieszany napój z ginem i \n wytrawnym wermutem, często \n przyozdobiony marynowaną cebulą. \n W swoim współczesnym wcieleniu \n uważany jest za kuzyna \n wszechobecnego  martini. Wyróżnia się \n przede wszystkim przybraniem oliwki\n zamiast cebuli.\n ',"+
+                "'🍹 50 ml Wódka \n"+
+                " 🍹 10 ml Wermut \n"+
+                " 🍹 lód  \n"+
+                " 🍹 20 ml Gin \n"+
+                " 🍹 3 cebulki koktajlowe  \n"+
+                " 🍹 1 Pasek skórki z cytryny  \n ')");//OK
+
+
+
+//ANTINES OLD TWIST
+        database.execSQL("INSERT INTO Drinks VALUES('Ballantines Old Twist' , ' \n \n Słodki, łagodny, orzeźwiający drink.\n Doskonały na gorące letnie wieczory.\n Świetnie się sprawdzi podczas domówek oraz\n na bankietach. \n',"+
+                "'🍹 40 ml Whisky Ballantines \n"+
+                " 🍹 20 ml soku jabłkowego \n"+
+                " 🍹 5 ml syropu cukrowego \n"+
+                " 🍹 kostki lodu \n"+
+                " 🍹 2 skórki pomarańczy \n')");//OK
+
+//MITHERING BASTARD
+        database.execSQL("INSERT INTO Drinks VALUES('Mitherning Bastard', ' \n \n Koktajl zdecydowanie przeznaczony dla wielbicieli \n pomarańczy i Whiskey. Doskonały na imprezę w letni wieczór.\n ',"+
+                "' 🍹  50 ml Szkocka Whisky \n "+
+                " 🍹 15 ml likier Triple Sec \n"+
+                " 🍹 30 ml sok pomarańczowy \n"+
+                " 🍹 kostki lodu \n')");//OK
+
+//CHERRY VODKA SOUR
+        database.execSQL("INSERT INTO Drinks VALUES( 'Cherry vodka sour',  '\n \n Doskonały drink dla wielbicieli mocnych alkoholi. \n  Kombinacja wódki wiśniowej z syropem \n waniliowym oraz nutą soku pomarańczowego \n z pewnością uraczy niejednego \n smakosza.\n',"+
+                "' 🍹 40 ml wiśniówki \n"+
+                "  🍹 20 ml soku z cytryny \n"+
+                "  🍹 10 ml syropu waniliowego \n"+
+                "  🍹 białko jajka \n"+
+                "  🍹 3 krople bittera pomarańczowego ')");//OK
+
+
+
+
+
+
+
+
+
+
+
+//CAIPOROSKA
         database.execSQL("INSERT INTO Drinks VALUES( 'Caipiroska', ' \n \n Caipiroska,  to rodzaj drinka, \n  bardzo słynnego brazylijskiego \n napoju o nazwie Caipirinha. \n Jego głównym składnikiem jest \n wódka czysta. Natomiast wódkę \n Cachaça produkuje się z trzciny \n cukrowej. Doskonały drink dla \n poszukiwaczy brazylijskich smaków .\n',"+
                 "'🍹 60 ml wódki czystej \n"+
                 " 🍹 ½  Limonki pociętej w łódeczki \n"+
@@ -233,7 +304,7 @@ public class Drinks extends AppCompatActivity {
 
 
 //HAIRLESS DUCK
-        database.execSQL("INSERT INTO Drinks VALUES('Harless Duck','\n \n Idealny drink dla smakoszy \n ajerkoniaków. Zdecydowanie \n sprawdzi się zimą \n przy kominku.\n', " +
+        database.execSQL("INSERT INTO Drinks VALUES('Hairless Duck','\n \n Idealny drink dla smakoszy \n ajerkoniaków. Zdecydowanie \n sprawdzi się zimą \n przy kominku.\n', " +
                 "'🍹 50 ml Wódki\n" +
                 " 🍹 15 ml Rumu\n" +
                 " 🍹 30 ml Ajerkoniaku \n" +
@@ -433,14 +504,14 @@ public class Drinks extends AppCompatActivity {
 
 
 
-        database.execSQL("INSERT INTO Drinks VALUES('Monte z orzechem  Laskowym',' \n \n Mleczno-orzechowy deserowy drink \n który poprawi każdemu nastrój  \n swoim smakiem i niebywałym \n wyglądem. Wersja z wódką o smaku \n orzechów laskowych.\n '," +
-                "'🍹 200 ml wódki o smaku Orzecha Laskowego \n"+
+        database.execSQL("INSERT INTO Drinks VALUES('Monte z orzechem laskowym',' \n \n Mleczno-orzechowy deserowy drink \n który poprawi każdemu nastrój  \n swoim smakiem i niebywałym \n wyglądem. Wersja z wódką o smaku \n orzechów laskowych.\n '," +
+                "'🍹 200 ml wódki o smaku orzecha laskowego \n"+
                 " 🍹 300 ml mleka 3,2% \n"+
                 " 🍹 Kostki lodu')");//OK
 
 
 
-        database.execSQL("INSERT INTO Drinks VALUES('Monte z orzechem  włoskim',' \n \n Mleczno-orzechowy deserowy drink, \n który poprawi każdemu nastrój  swoim \n smakiem i niebywałym wyglądem.\n Wersja z wódką o smaku orzechów \n włoskich. \n'," +
+        database.execSQL("INSERT INTO Drinks VALUES('Monte z orzechem włoskim',' \n \n Mleczno-orzechowy deserowy drink, \n który poprawi każdemu nastrój  swoim \n smakiem i niebywałym wyglądem.\n Wersja z wódką o smaku orzechów \n włoskich. \n'," +
                 "' 🍹 200 ml wódki o smaku orzecha \n włoskiego \n"+
                 "  🍹 300 ml mleka 3,2% \n"+
                 "  🍹 Kostki lodu')");//OK
@@ -604,6 +675,9 @@ public class Drinks extends AppCompatActivity {
                 " 🍹 100 ml sok pomidorowy \n"+
                 " 🍹 Tabasco 15 ml\n"+
                 " 🍹 korzeń chrzanu \n')");//OK
+
+
+
 
 
     }

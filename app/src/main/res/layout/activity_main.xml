@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
+    android:screenOrientation="portrait"
     tools:context=".MainActivity">
 
     <TextView
@@ -43,6 +44,7 @@
             android:background="@drawable/btn_menu"
             android:onClick="FavsPage"
             android:text="Ulubione"
+            android:textSize="16sp"
             app:layout_column="0"
             app:layout_row="1" />
 
@@ -53,6 +55,7 @@
             android:background="@drawable/btn_menu"
             android:onClick="drinkChoosePage"
             android:text="Komponuj drinka"
+            android:textSize="16sp"
             app:layout_column="0"
             app:layout_row="0" />
 
@@ -63,6 +66,7 @@
             android:background="@drawable/btn_menu"
             android:onClick="ListPage"
             android:text="Spis drinków"
+            android:textSize="16sp"
             app:layout_column="0"
             app:layout_row="2" />
 
@@ -73,6 +77,7 @@
             android:background="@drawable/btn_menu"
             android:onClick="ListPage"
             android:text="Strona WWW"
+            android:textSize="16sp"
             app:layout_column="0"
             app:layout_row="3" />
 
