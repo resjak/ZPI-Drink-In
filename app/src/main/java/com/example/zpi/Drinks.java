@@ -120,8 +120,8 @@ public class Drinks extends AppCompatActivity {
 
 
 
-        //ROYAL TEA AW
-        database.execSQL("INSERT INTO Drinks VALUES('Royal Tea',' \n \n Mrożona herbata o intensywnym smaku z dodatkiem rumu  da nam pyszny, słodki \n  i orzeźwiający smak.\n Idealny drink na lato. \n', " +
+        //ROYAL TEA
+        database.execSQL("INSERT INTO Drinks VALUES('Royal Tea','\n \n Mrożona herbata o intensywnym smaku z dodatkiem rumu\n da nam pyszny, słodki i orzeźwiający smak.\n Idealny drink na lato.\n', " +
                 "'🍹 30 ml ginu\n" +
                 " 🍹 60 ml herbaty Earl Grey\n" +
                 " 🍹 10 ml soku z limonki\n"+
@@ -379,7 +379,7 @@ public class Drinks extends AppCompatActivity {
 
 
 //SAPODILL FIZZ
-        database.execSQL("INSERT INTO Drinks VALUES('Sapodill Fizz',' \n \nDrink z intensywnym \n smakiem  brzoskwini, gruszki i nutką cytryny. Idealny na sezon grillowy. \n', " +
+        database.execSQL("INSERT INTO Drinks VALUES('Sapodill Fizz',' \n \nDrink z intensywnym smakiem  brzoskwini,\n gruszki i nutką cytryny. Idealny na sezon grillowy.\n', " +
                 "' 🍹 1½ porcje Absolut Apeach \n"+
                 "  🍹 ⅓ porcja Sok Z cytryny \n"+
                 "  🍹 1 porcja Puree Z gruszek \n"+
@@ -393,11 +393,11 @@ public class Drinks extends AppCompatActivity {
 
 
 //FINLANDIA CRANBERRY BRISK
-        database.execSQL("INSERT INTO Drinks VALUES('Finlandia Cranberry Brisk',' \n \n Drink o bardzo wyrazistym cytrusowym smaku doskonały na upalne dni. \n', " +
-                "' 🍹 1½ wódkę finlandia cranberry \n"+
-                "  🍹 ⅓ porcja Sok Z cytryny \n"+
-                "  🍹 ⅓ porcja Sok Z grejpfruta \n"+
-                "  🍹 Woda gazowana ')");//OK
+        database.execSQL("INSERT INTO Drinks VALUES('Finlandia Cranberry Brisk','\n \n Drink o bardzo wyrazistym cytrusowym smaku\n doskonały na upalne dni.\n', " +
+                "'🍹 1½ wódkę finlandia cranberry\n"+
+                "🍹 ⅓ porcja Sok Z cytryny\n"+
+                "🍹 ⅓ porcja Sok Z grejpfruta\n"+
+                "🍹 Woda gazowana')");//OK
 
 
 
@@ -426,14 +426,14 @@ public class Drinks extends AppCompatActivity {
                 "  🍹 Kostki lodu')");//OK
 
 //SOK Z GUMIJAGÓD
-        database.execSQL("INSERT INTO Drinks VALUES('Sok z Gumijagód',' \n \n Składa się on z dwóch składników:\n wódka pigwowa z sokiem \n porzeczkowym.\n Ten drink znany jest też \n pod nazwą  Kociołek  Panoramixa, który \n ma dodać \n dużo energii i sponiewierać  tanim \n kosztem.\n', "+
+        database.execSQL("INSERT INTO Drinks VALUES('Sok z Gumijagód',' \n \n Składa się on z dwóch składników:\n wódka pigwowa z sokiem porzeczkowym.\n Ten drink znany jest też pod nazwą Kociołek Panoramixa,\n który ma dodać dużo energii\n i sponiewierać tanim kosztem.\n', "+
                 "'🍹 0,5 l wódki \n"+
                 " 🍹 1 litr soku porzeczkowego \n"+
                 " 🍹 Sok z cytryny  \n"+
                 " 🍹 Kostki lodu')");//OK
 
 //ABSOLUT SPICED APPLE SOUR
-        database.execSQL("INSERT INTO Drinks VALUES('Absolut Spiced Apple sour',' \n \n Wykwintny i lekki drink o smaku \n jabłkowym z nutą cytryny oraz \n dodatkiem żółtka jajka.\n', "+
+        database.execSQL("INSERT INTO Drinks VALUES('Absolut Spiced Apple sour',' \n \n Wykwintny i lekki drink o smaku jabłkowym,\n z nutą cytryny oraz dodatkiem żółtka jajka.\n', "+
                 "' 🍹 1½ porcje Absolut Äpple \n"+
                 "  🍹 ¾ porcja Sok Jabłkowy \n"+
                 "  🍹 ¾ porcja Sok Z cytryny  \n"+
@@ -504,7 +504,7 @@ public class Drinks extends AppCompatActivity {
 
 
 
-        database.execSQL("INSERT INTO Drinks VALUES('Monte z orzechem laskowym',' \n \n Mleczno-orzechowy deserowy drink \n który poprawi każdemu nastrój  \n swoim smakiem i niebywałym \n wyglądem. Wersja z wódką o smaku \n orzechów laskowych.\n '," +
+        database.execSQL("INSERT INTO Drinks VALUES('Monte z orzechem laskowym',' \n \n Mleczno-orzechowy deserowy drink,\n który poprawi każdemu nastrój  \n swoim smakiem i niebywałym \n wyglądem. Wersja z wódką o smaku \n orzechów laskowych.\n '," +
                 "'🍹 200 ml wódki o smaku orzecha laskowego \n"+
                 " 🍹 300 ml mleka 3,2% \n"+
                 " 🍹 Kostki lodu')");//OK
@@ -542,7 +542,7 @@ public class Drinks extends AppCompatActivity {
 
 
 
-        database.execSQL("INSERT INTO Drinks VALUES('White Russian',' \n \n Mleczno-kawowy drink z wódką i likierem.\n Słodki oraz  bardzo mocny. \nIdealny dla osób, które  lubią \n słodkie i intensywne drinki. \n'," +
+        database.execSQL("INSERT INTO Drinks VALUES('White Russian',' \n \n Mleczno-kawowy drink z wódką i likierem.\n Słodki oraz  bardzo mocny.\nIdealny dla osób, które  lubią \n słodkie i intensywne drinki. \n'," +
                 "'  🍹  50 ml wódki \n"+
                 "   🍹  20 ml likieru kawowego \n"+
                 "   🍹  50 ml mleka skondensowanego \n"+
@@ -550,7 +550,7 @@ public class Drinks extends AppCompatActivity {
 
 
 
-        database.execSQL("INSERT INTO Drinks VALUES('Pijany Kaktus',' \n \n Prosty, ciekawy i smaczny drink. \n Doskonały dla osób szukających nietypowych\n oraz egzotycznych smaków.\n'," +
+        database.execSQL("INSERT INTO Drinks VALUES('Pijany Kaktus',' \n \n Prosty, ciekawy i smaczny drink.\n Doskonały dla osób szukających nietypowych\n oraz egzotycznych smaków.\n'," +
                 "' 🍹  50 ml wódki \n"+
                 "  🍹  200 ml soku z kaktusa \n"+
                 "  🍹  plasterek cytryny \n"+
@@ -559,11 +559,11 @@ public class Drinks extends AppCompatActivity {
 
 
 
-        database.execSQL("INSERT INTO Drinks VALUES('Blue Lagoon',' \n \n Krystaliczno-błękitny drink z wódką i spritem. Swój kolor zawdzięcza likierowi Blue Curacao. Idealny do wypoczynku na Karaibach.\n'," +
-                "' 🍹  50 ml wódki \n"+
-                "  🍹  40 ml likieru Blue Curacao \n"+
-                "  🍹  lemoniadą wypełniamy do pełna \n"+
-                "  🍹  10 ml sok z cytryny \n"+
+        database.execSQL("INSERT INTO Drinks VALUES('Blue Lagoon','\n\n Krystaliczno-błękitny drink z wódką i spritem. Swój kolor zawdzięcza likierowi Blue Curacao.\n Idealny do wypoczynku na Karaibach.\n'," +
+                "' 🍹  50 ml wódki\n"+
+                "  🍹  40 ml likieru Blue Curacao\n"+
+                "  🍹  lemoniadą wypełniamy do pełna\n"+
+                "  🍹  10 ml sok z cytryny\n"+
                 "  🍹  Kostki lodu')");//OK
 
 
